@@ -3,6 +3,6 @@ Hi there 👋
 - 🌱 I’m currently learning Vanila JS, Database, Python
 - 👯 I’m looking to collaborate on Various open source projects. [Web , ML]  
 - 💬 Ask me ...
-- 📫 How to reach me: Linktr.ee/rahim.jr
+- 📫 How to reach me: [LinkTree Profile] (Linktr.ee/rahim.jr)
 - 😄 Pronouns: He/His 
 - ⚡ Fun fact: ...
