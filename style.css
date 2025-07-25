@@ -50,10 +50,23 @@ body {
     color: #2c3e50;
     text-decoration: none;
     transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-logo a i {
+    font-size: 1.8rem;
+    color: #3498db;
+    transition: transform 0.3s ease;
 }
 
 .nav-logo a:hover {
     color: #3498db;
+}
+
+.nav-logo a:hover i {
+    transform: rotate(15deg);
 }
 
 .nav-menu {
@@ -197,17 +210,18 @@ body {
     align-items: center;
 }
 
-.profile-placeholder {
-    width: 300px;
-    height: 300px;
-    background: rgba(255, 255, 255, 0.1);
+.profile-image {
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 5rem;
-    color: rgba(255, 255, 255, 0.3);
-    border: 3px solid rgba(255, 255, 255, 0.2);
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
 }
 
 /* Section Titles */
@@ -406,43 +420,90 @@ body {
     background: #f8f9fa;
 }
 
-.education-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+.education-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
 }
 
-.education-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    border-left: 4px solid #3498db;
+.education-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #3498db, #2980b9);
+    transform: translateX(-50%);
+    border-radius: 2px;
 }
 
-.education-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+.timeline-node {
+    position: relative;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
 }
 
-.education-icon {
-    width: 60px;
-    height: 60px;
-    background: #3498db;
+.timeline-node:nth-child(odd) {
+    flex-direction: row;
+}
+
+.timeline-node:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.node-circle {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+    position: relative;
+    z-index: 10;
+    transition: all 0.3s ease;
 }
 
-.education-icon i {
-    font-size: 1.5rem;
+.node-circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(52, 152, 219, 0.4);
+}
+
+.node-circle i {
+    font-size: 2rem;
     color: white;
 }
 
-.education-content h3 {
+.node-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 2rem;
+    flex: 1;
+    max-width: 400px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.timeline-node:nth-child(odd) .node-content {
+    margin-left: 2rem;
+}
+
+.timeline-node:nth-child(even) .node-content {
+    margin-right: 2rem;
+}
+
+.node-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.node-content h3 {
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
@@ -650,8 +711,36 @@ body {
         height: 250px;
     }
 
-    .education-grid {
-        grid-template-columns: 1fr;
+    .education-timeline::before {
+        left: 50px;
+        transform: none;
+    }
+
+    .timeline-node {
+        flex-direction: column !important;
+        align-items: flex-start;
+        margin-left: 100px;
+        padding-left: 20px;
+    }
+
+    .timeline-node:nth-child(odd),
+    .timeline-node:nth-child(even) {
+        flex-direction: column !important;
+    }
+
+    .node-circle {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        left: -110px;
+        top: 0;
+    }
+
+    .node-content {
+        margin: 0 !important;
+        max-width: none;
+        width: 100%;
+        margin-top: 10px;
     }
 
     .skills-grid {

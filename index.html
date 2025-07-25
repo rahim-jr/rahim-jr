@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Md. Abdur Rahim - Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -12,7 +13,10 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="#home">Your Name</a>
+                <a href="#home">
+                    <i class="fas fa-code"></i>
+                    <span>RAHIM</span>
+                </a>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
@@ -43,14 +47,14 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">Hi, I'm <span class="highlight">Your Name</span></h1>
-                <p class="hero-subtitle">Full Stack Developer & Creative Problem Solver</p>
+                <h1 class="hero-title">Hi, I'm <span class="highlight">Md. Abdur Rahim</span></h1>
+                <p class="hero-subtitle">Aspiring Software Engineer in making.</p>
                 <p class="hero-description">
                     I create innovative web solutions and bring ideas to life through clean, efficient code. 
                     Passionate about user experience and modern web technologies.
                 </p>
                 <div class="hero-buttons">
-                    <a href="resume/resume.pdf" class="btn btn-primary" download>
+                    <a href="resume/resume.pdf" class="btn btn-primary" download="Md_Abdur_Rahim_SWE.pdf">
                         <i class="fas fa-download"></i> Download Resume
                     </a>
                     <a href="#projects" class="btn btn-secondary">
@@ -59,9 +63,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <div class="profile-placeholder">
-                    <i class="fas fa-user"></i>
-                </div>
+                <img src="images/my_image.jpg" alt="Rahim" class="profile-image">
             </div>
         </div>
     </section>
@@ -219,6 +221,52 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-info">
+                            <h3>Mobile Fitness App</h3>
+                            <p>Cross-platform mobile application for fitness tracking with workout plans, progress monitoring, and social features.</p>
+                            <div class="project-tech">
+                                <span>React Native</span>
+                                <span>Firebase</span>
+                                <span>Redux</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--I just have to add more Project cards.-->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                    <div class="project-overlay">
+                        <div class="project-info">
+                            <h3>Cybersecurity Dashboard</h3>
+                            <p>Real-time security monitoring system with threat detection, vulnerability assessment, and incident response management.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>Django</span>
+                                <span>PostgreSQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -227,12 +275,12 @@
     <section id="education" class="education">
         <div class="container">
             <h2 class="section-title">Education</h2>
-            <div class="education-grid">
-                <div class="education-card">
-                    <div class="education-icon">
+            <div class="education-timeline">
+                <div class="timeline-node">
+                    <div class="node-circle">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <div class="education-content">
+                    <div class="node-content">
                         <h3>Master of Computer Science</h3>
                         <p class="education-school">University of Technology</p>
                         <p class="education-year">2020 - 2022</p>
@@ -243,11 +291,11 @@
                     </div>
                 </div>
 
-                <div class="education-card">
-                    <div class="education-icon">
+                <div class="timeline-node">
+                    <div class="node-circle">
                         <i class="fas fa-university"></i>
                     </div>
-                    <div class="education-content">
+                    <div class="node-content">
                         <h3>Bachelor of Software Engineering</h3>
                         <p class="education-school">State University</p>
                         <p class="education-year">2016 - 2020</p>
@@ -258,11 +306,11 @@
                     </div>
                 </div>
 
-                <div class="education-card">
-                    <div class="education-icon">
+                <div class="timeline-node">
+                    <div class="node-circle">
                         <i class="fas fa-certificate"></i>
                     </div>
-                    <div class="education-content">
+                    <div class="node-content">
                         <h3>Professional Certifications</h3>
                         <p class="education-school">Various Institutions</p>
                         <p class="education-year">2018 - Present</p>
