@@ -1,3 +1,31 @@
+// Custom Cursor
+const cursor = document.querySelector('.custom-cursor');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+});
+
+// Add hover effects for interactive elements
+document.addEventListener('mouseover', (e) => {
+    if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('.btn') || e.target.closest('.skill-item') || e.target.closest('.project-card') || e.target.closest('.timeline-node')) {
+        cursor.classList.add('hover');
+    }
+});
+
+document.addEventListener('mouseout', (e) => {
+    cursor.classList.remove('hover');
+});
+
+// Add click effect
+document.addEventListener('mousedown', () => {
+    cursor.classList.add('click');
+});
+
+document.addEventListener('mouseup', () => {
+    cursor.classList.remove('click');
+});
+
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
@@ -13,17 +41,102 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
     navMenu.classList.remove('active');
 }));
 
-// Smooth scrolling for navigation links
+
+
+
+
+// Fast and smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            const headerOffset = 80;
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            // Fast smooth scrolling
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
             });
         }
+    });
+});
+
+// Fast smooth scrolling for all internal links
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+            const offsetTop = targetSection.offsetTop - 80;
+            
+            // Fast smooth scrolling
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Add fast smooth scrolling to all buttons and links
+document.addEventListener('DOMContentLoaded', function() {
+    // Fast smooth scroll for "View Projects" button
+    const viewProjectsBtn = document.querySelector('a[href="#projects"]');
+    if (viewProjectsBtn) {
+        viewProjectsBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const projectsSection = document.querySelector('#projects');
+            if (projectsSection) {
+                const offsetTop = projectsSection.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+    
+    // Custom fast smooth scrolling function
+    function fastSmoothScroll(targetElement) {
+        const targetPosition = targetElement.offsetTop - 80;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        const duration = 600; // Faster duration
+        let start = null;
+        
+        function animation(currentTime) {
+            if (start === null) start = currentTime;
+            const timeElapsed = currentTime - start;
+            const run = ease(timeElapsed, startPosition, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+        
+        function ease(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+        
+        requestAnimationFrame(animation);
+    }
+    
+    // Apply fast smooth scrolling to all navigation links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                fastSmoothScroll(targetSection);
+            }
+        });
     });
 });
 
@@ -42,18 +155,59 @@ window.addEventListener('scroll', () => {
 // Contact form handling
 const contactForm = document.getElementById('contactForm');
 
+// Initialize EmailJS with your actual public key
+emailjs.init("fyVt5igh--KWJd0tV");
+
+// Security measures
+let lastSubmitTime = 0;
+const SUBMIT_COOLDOWN = 5000; // 5 seconds
+let submitCount = 0;
+const MAX_SUBMITS_PER_HOUR = 10;
+const HOUR_IN_MS = 3600000; // 1 hour in milliseconds
+
+// Reset submit count every hour
+setInterval(() => {
+    submitCount = 0;
+}, HOUR_IN_MS);
+
 contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
+    // Rate limiting per session
+    const now = Date.now();
+    if (now - lastSubmitTime < SUBMIT_COOLDOWN) {
+        showNotification('Please wait 5 seconds before sending another message.', 'error');
+        return;
+    }
+    
+    // Hourly limit
+    if (submitCount >= MAX_SUBMITS_PER_HOUR) {
+        showNotification('Too many messages sent. Please try again later.', 'error');
+        return;
+    }
+    
+    lastSubmitTime = now;
+    submitCount++;
+    
     // Get form data
     const formData = new FormData(this);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const message = formData.get('message');
+    let name = formData.get('name').trim();
+    let email = formData.get('email').trim();
+    let message = formData.get('message').trim();
     
-    // Simple validation
+    // Input sanitization
+    name = sanitizeInput(name);
+    email = sanitizeInput(email);
+    message = sanitizeInput(message);
+    
+    // Enhanced validation
     if (!name || !email || !message) {
         showNotification('Please fill in all fields.', 'error');
+        return;
+    }
+    
+    if (name.length < 2 || name.length > 50) {
+        showNotification('Name must be between 2 and 50 characters.', 'error');
         return;
     }
     
@@ -62,17 +216,71 @@ contactForm.addEventListener('submit', function(e) {
         return;
     }
     
-    // Simulate form submission (replace with actual form handling)
-    showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
+    if (message.length < 10 || message.length > 1000) {
+        showNotification('Message must be between 10 and 1000 characters.', 'error');
+        return;
+    }
     
-    // Reset form
-    this.reset();
+    // Check for suspicious content
+    if (containsSuspiciousContent(name) || containsSuspiciousContent(email) || containsSuspiciousContent(message)) {
+        showNotification('Invalid content detected. Please check your input.', 'error');
+        return;
+    }
+    
+    // Show sending notification
+    showNotification('Sending your message...', 'info');
+    
+    // EmailJS integration with your actual service
+    const combinedMessage = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
+    
+    const templateParams = {
+        message: combinedMessage
+    };
+    
+    console.log('Sending email with combined message:', combinedMessage);
+    console.log('Template params:', templateParams);
+    
+    emailjs.send('service_x7ud7rg', 'template_cm2zcyl', templateParams)
+        .then(function(response) {
+            console.log('Email sent successfully:', response);
+            showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+            contactForm.reset();
+        }, function(error) {
+            console.error('Email send failed:', error);
+            showNotification('Failed to send message. Please try again. Error: ' + error.text, 'error');
+        });
 });
+
+// Input sanitization function
+function sanitizeInput(input) {
+    return input
+        .replace(/[<>]/g, '') // Remove potential HTML tags
+        .replace(/javascript:/gi, '') // Remove javascript: protocol
+        .replace(/on\w+=/gi, '') // Remove event handlers
+        .substring(0, 1000); // Limit length
+}
 
 // Email validation function
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
+}
+
+// Check for suspicious content
+function containsSuspiciousContent(text) {
+    const suspiciousPatterns = [
+        /<script/i,
+        /javascript:/i,
+        /on\w+=/i,
+        /eval\(/i,
+        /document\./i,
+        /window\./i,
+        /alert\(/i,
+        /confirm\(/i,
+        /prompt\(/i
+    ];
+    
+    return suspiciousPatterns.some(pattern => pattern.test(text));
 }
 
 // Notification system
@@ -179,7 +387,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.skill-item, .project-card, .education-card');
+    const animatedElements = document.querySelectorAll('.skill-item, .project-card, .timeline-node');
     
     animatedElements.forEach(el => {
         el.style.opacity = '0';
@@ -211,13 +419,13 @@ document.querySelectorAll('.skill-item').forEach(skill => {
     });
 });
 
-// Education card hover effects
-document.querySelectorAll('.education-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
+// Education timeline node hover effects
+document.querySelectorAll('.timeline-node').forEach(node => {
+    node.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-8px) scale(1.02)';
     });
     
-    card.addEventListener('mouseleave', function() {
+    node.addEventListener('mouseleave', function() {
         this.style.transform = 'translateY(0) scale(1)';
     });
 });
@@ -232,25 +440,4 @@ window.addEventListener('load', () => {
     }, 100);
 });
 
-// Typing effect for hero title (optional enhancement)
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.innerHTML = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    
-    type();
-}
-
-// Uncomment the following lines if you want a typing effect on the hero title
-// document.addEventListener('DOMContentLoaded', () => {
-//     const heroTitle = document.querySelector('.hero-title');
-//     const originalText = heroTitle.innerHTML;
-//     typeWriter(heroTitle, originalText, 50);
-// }); 
+ 
