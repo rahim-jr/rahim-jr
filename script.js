@@ -164,11 +164,38 @@ const SUBMIT_COOLDOWN = 5000; // 5 seconds
 let submitCount = 0;
 const MAX_SUBMITS_PER_HOUR = 10;
 const HOUR_IN_MS = 3600000; // 1 hour in milliseconds
+let blockedIPs = new Set();
+const MAX_FAILED_ATTEMPTS = 3;
+let failedAttempts = 0;
 
 // Reset submit count every hour
 setInterval(() => {
     submitCount = 0;
+    failedAttempts = 0;
 }, HOUR_IN_MS);
+
+// Generate simple fingerprint for basic bot detection
+function generateFingerprint() {
+    return navigator.userAgent + 
+           screen.width + 
+           screen.height + 
+           new Date().getTimezoneOffset();
+}
+
+// Track form interactions for security
+let formInteractions = 0;
+let lastInteractionTime = 0;
+
+// Monitor form field interactions
+contactForm.addEventListener('focusin', function() {
+    formInteractions++;
+    lastInteractionTime = Date.now();
+    
+    // Set form start time on first interaction
+    if (!sessionStorage.getItem('formStartTime')) {
+        sessionStorage.setItem('formStartTime', Date.now());
+    }
+});
 
 contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -224,6 +251,38 @@ contactForm.addEventListener('submit', function(e) {
     // Check for suspicious content
     if (containsSuspiciousContent(name) || containsSuspiciousContent(email) || containsSuspiciousContent(message)) {
         showNotification('Invalid content detected. Please check your input.', 'error');
+        failedAttempts++;
+        return;
+    }
+    
+    // Check for repeated failed attempts
+    if (failedAttempts >= MAX_FAILED_ATTEMPTS) {
+        showNotification('Too many failed attempts. Please try again later.', 'error');
+        return;
+    }
+    
+    // Basic bot detection - check if form was filled too quickly
+    const formStartTime = sessionStorage.getItem('formStartTime') || Date.now();
+    const timeSpent = Date.now() - formStartTime;
+    
+    if (timeSpent < 2000) { // Less than 2 seconds
+        showNotification('Please take your time filling out the form.', 'error');
+        failedAttempts++;
+        return;
+    }
+    
+    // Check for minimum form interactions (basic human verification)
+    if (formInteractions < 3) {
+        showNotification('Please interact with the form fields before submitting.', 'error');
+        failedAttempts++;
+        return;
+    }
+    
+    // Check for reasonable interaction time
+    const interactionTime = Date.now() - lastInteractionTime;
+    if (interactionTime < 1000) { // Less than 1 second since last interaction
+        showNotification('Please take your time with the form.', 'error');
+        failedAttempts++;
         return;
     }
     
@@ -244,10 +303,19 @@ contactForm.addEventListener('submit', function(e) {
         .then(function(response) {
             console.log('Email sent successfully:', response);
             showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+            
+            // Reset form and security counters
             contactForm.reset();
+            formInteractions = 0;
+            failedAttempts = 0;
+            sessionStorage.removeItem('formStartTime');
+            
+            // Log successful submission for monitoring
+            console.log('Form submitted successfully by:', generateFingerprint());
         }, function(error) {
             console.error('Email send failed:', error);
             showNotification('Failed to send message. Please try again. Error: ' + error.text, 'error');
+            failedAttempts++;
         });
 });
 
