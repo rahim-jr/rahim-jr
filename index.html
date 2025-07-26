@@ -3,13 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md. Abdur Rahim - Portfolio</title>
+    <title>Md. Abdur Rahim - Full Stack Developer Portfolio</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Md. Abdur Rahim - Passionate full-stack developer creating innovative web solutions. Specialized in React, Python, Go, and modern web technologies.">
+    <meta name="keywords" content="full stack developer, web developer, React, Python, Go, software engineer, portfolio">
+    <meta name="author" content="Md. Abdur Rahim">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Md. Abdur Rahim - Full Stack Developer Portfolio">
+    <meta property="og:description" content="Passionate full-stack developer creating innovative web solutions and bringing ideas to life through clean, efficient code.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com">
+    <meta property="og:image" content="images/my_image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Md. Abdur Rahim - Full Stack Developer Portfolio">
+    <meta name="twitter:description" content="Passionate full-stack developer creating innovative web solutions.">
+    <meta name="twitter:image" content="images/my_image.jpg">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#3498db">
+    <meta name="msapplication-TileColor" content="#3498db">
+    <link rel="canonical" href="https://your-domain.com">
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="images/my_image.jpg" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <div class="custom-cursor"></div>
 </head>
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+    
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -35,6 +73,7 @@
                 <li class="nav-item">
                     <a href="#about" class="nav-link">About</a>
                 </li>
+
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -64,7 +103,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="images/my_image.jpg" alt="Rahim" class="profile-image">
+                <img src="images/my_image.jpg" alt="Rahim" class="profile-image" loading="lazy">
             </div>
         </div>
     </section>
@@ -74,55 +113,35 @@
         <div class="container">
             <h2 class="section-title">Skills & Technologies</h2>
             <div class="skills-grid">
-                <div class="skill-item">
-                    <i class="fab fa-html5"></i>
-                    <span>HTML5</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fab fa-css3-alt"></i>
-                    <span>CSS3</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fab fa-js"></i>
-                    <span>JavaScript</span>
-                </div>
-                <div class="skill-item">
+                <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer" class="skill-item">
                     <i class="fab fa-react"></i>
-                    <span>React</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fab fa-node-js"></i>
-                    <span>Node.js</span>
-                </div>
-                <div class="skill-item">
+                </a>
+                <a href="https://ui.shadcn.com/" target="_blank" rel="noopener noreferrer" class="skill-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="m19.01 11.55-7.46 7.46c-.46.46-.46 1.19 0 1.65a1.16 1.16 0 0 0 1.64 0l7.46-7.46c.46-.46.46-1.19 0-1.65s-1.19-.46-1.65 0ZM19.17 3.34c-.46-.46-1.19-.46-1.65 0L3.34 17.52c-.46.46-.46 1.19 0 1.65a1.16 1.16 0 0 0 1.64 0L19.16 4.99c.46-.46.46-1.19 0-1.65Z" class="b"></path>
+                    </svg>
+                </a>
+                <a href="https://golang.org/" target="_blank" rel="noopener noreferrer" class="skill-item">
+                    <i class="fab fa-golang"></i>
+                </a>
+                <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer" class="skill-item">
                     <i class="fab fa-python"></i>
-                    <span>Python</span>
-                </div>
-                <div class="skill-item">
+                </a>
+                <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer" class="skill-item">
                     <i class="fab fa-git-alt"></i>
-                    <span>Git</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fab fa-docker"></i>
-                    <span>Docker</span>
-                </div>
-                <div class="skill-item">
+                </a>
+                <a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer" class="skill-item">
                     <i class="fas fa-database"></i>
-                    <span>MongoDB</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fab fa-aws"></i>
-                    <span>AWS</span>
-                </div>
-                <div class="skill-item">
+                </a>
+                <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer" class="skill-item">
+                    <i class="fab fa-docker"></i>
+                </a>
+                <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" class="skill-item">
                     <i class="fab fa-figma"></i>
-                    <span>Figma</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fab fa-wordpress"></i>
-                    <span>WordPress</span>
-                </div>
+                </a>
             </div>
+            
+
         </div>
     </section>
 
@@ -133,6 +152,8 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
+                        <!-- Uncomment and add your image path when you have the image -->
+                        <!-- <img src="images/projects/ecommerce-platform.jpg" alt="E-Commerce Platform" class="project-img"> -->
                         <div class="project-placeholder">
                             <i class="fas fa-laptop-code"></i>
                         </div>
@@ -156,6 +177,8 @@
 
                 <div class="project-card">
                     <div class="project-image">
+                        <!-- Uncomment and add your image path when you have the image -->
+                        <!-- <img src="images/projects/task-management.jpg" alt="Task Management App" class="project-img"> -->
                         <div class="project-placeholder">
                             <i class="fas fa-mobile-alt"></i>
                         </div>
@@ -179,6 +202,8 @@
 
                 <div class="project-card">
                     <div class="project-image">
+                        <!-- Uncomment and add your image path when you have the image -->
+                        <!-- <img src="images/projects/analytics-dashboard.jpg" alt="Data Analytics Dashboard" class="project-img"> -->
                         <div class="project-placeholder">
                             <i class="fas fa-chart-line"></i>
                         </div>
@@ -202,6 +227,8 @@
 
                 <div class="project-card">
                     <div class="project-image">
+                        <!-- Uncomment and add your image path when you have the image -->
+                        <!-- <img src="images/projects/ai-chat.jpg" alt="AI Chat Assistant" class="project-img"> -->
                         <div class="project-placeholder">
                             <i class="fas fa-robot"></i>
                         </div>
@@ -225,6 +252,8 @@
 
                 <div class="project-card">
                     <div class="project-image">
+                        <!-- Uncomment and add your image path when you have the image -->
+                        <!-- <img src="images/projects/fitness-app.jpg" alt="Mobile Fitness App" class="project-img"> -->
                         <div class="project-placeholder">
                             <i class="fas fa-mobile-alt"></i>
                         </div>
@@ -248,6 +277,8 @@
                 <!--I just have to add more Project cards.-->
                 <div class="project-card">
                     <div class="project-image">
+                        <!-- Uncomment and add your image path when you have the image -->
+                        <!-- <img src="images/projects/cybersecurity-dashboard.jpg" alt="Cybersecurity Dashboard" class="project-img"> -->
                         <div class="project-placeholder">
                             <i class="fas fa-shield-alt"></i>
                         </div>
@@ -343,15 +374,15 @@
                     <div class="contact-info">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>your.email@example.com</span>
+                            <span>rahim.cse.diu@gmail.com</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Your City, Country</span>
+                            <span>Dhaka, Bangladesh</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
-                            <span>+1 (555) 123-4567</span>
+                            <span>+8801537274080</span>
                         </div>
                     </div>
                 </div>
@@ -361,15 +392,15 @@
                     <form id="contactForm">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project, timeline, budget, and any specific requirements. I'll get back to you within 24 hours!" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">
                             <i class="fas fa-paper-plane"></i> Send Message
@@ -384,13 +415,27 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2024 Your Name. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <div class="footer-text">
+                    <h3>Md. Abdur Rahim</h3>
+                    <p>"Any fool can write code that a computer can understand. Good programmers write code that humans can understand." - Martin Fowler</p>
                 </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#education">Education</a>
+                    <a href="#about">About</a>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Md. Abdur Rahim. All rights reserved. | Built with ❤️ and modern web technologies</p>
             </div>
         </div>
     </footer>
@@ -398,5 +443,10 @@
     <!-- EmailJS for contact form -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="script.js"></script>
+    
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 </body>
 </html>
