@@ -62,9 +62,3 @@ Hi there 👋
 - 🌟 **Contributing to open source projects**
 - 📚 **Learning advanced backend technologies**
 - 🚀 **Exploring cloud-native development**
-
----
-
-<div align="center">
-  <img src="https://wakatime.com/badge/user/rahim_jr.svg" alt="WakaTime Stats" />
-</div>
