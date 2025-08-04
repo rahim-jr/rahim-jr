@@ -66,5 +66,5 @@ Hi there 👋
 ---
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=rahim_jr&theme=radical&hide_border=true&bg_color=0D1117" alt="WakaTime Stats" />
+  <img src="https://wakatime.com/badge/user/rahim_jr.svg" alt="WakaTime Stats" />
 </div>
