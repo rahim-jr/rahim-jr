@@ -53,12 +53,6 @@ Hi there 👋
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rahim-jr&layout=compact&theme=radical&hide_border=true&bg_color=0D1117" alt="Top Languages" />
 </div>
 
-## 🏆 GitHub Trophies
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=rahim-jr&theme=radical&no-frame=true&no-bg=false&margin-w=4" alt="GitHub Trophies" />
-</div>
-
 ## 📈 Contribution Graph
 
 <div align="center">
