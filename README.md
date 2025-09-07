@@ -34,27 +34,3 @@ Hi there 👋
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-
-## 📊 GitHub Stats
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=rahim-jr&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117" alt="GitHub Stats" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=rahim-jr&theme=radical&hide_border=true&background=0D1117" alt="GitHub Streak" />
-</div>
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rahim-jr&layout=compact&theme=radical&hide_border=true&bg_color=0D1117" alt="Top Languages" />
-</div>
-
-## 📈 Contribution Graph
-
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=rahim-jr&theme=radical&hide_border=true&bg_color=0D1117" alt="Contribution Graph" />
-</div>
-
-## 🎯 Current Focus
-
-- 🔥 **Building scalable web applications**
-- 🌟 **Contributing to open source projects**
-- 📚 **Learning advanced backend technologies**
-- 🚀 **Exploring cloud-native development**
