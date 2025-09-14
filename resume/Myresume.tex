@@ -1,0 +1,198 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{multicol}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Md. Abdur Rahim} \\ \vspace{1pt}
+    \small Phone: +88015-37274080 $|$ \href{mailto:rahim.cse.diu@gmail.com}{\underline{rahim.cse.diu@gmail.com}} $|$ 
+    \href{https://www.linkedin.com/in/foundyourahim/}{\underline{linkedin.com/in/foundyourahim}} $|$
+    \href{https://github.com/rahim-jr}{\underline{github.com/rahim-jr}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Daffodil International University}{Ashulia, Dhaka, Bangladesh}
+      {Bachelor of Science in Computer Science \& Engineering}{Aug. 2021 - May 2025}
+      \resumeItemListStart
+        \resumeItem{Relevant Coursework: Data Structures, Algorithms, Software Engineering, Database Systems}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{\href{}{E-Commerce Web Application}} $|$ \emph{React, Node.js, MongoDB, Express}}{2022}
+          \resumeItemListStart
+            \resumeItem{Built a full-stack e-commerce platform with user authentication and payment processing}
+            \resumeItem{Implemented shopping cart functionality and order management system}
+            \resumeItem{Deployed on AWS with CI/CD pipeline using GitHub Actions}
+            \resumeItem{Achieved 99\% uptime and handled 1000+ concurrent users}
+          \resumeItemListEnd
+          
+      \resumeProjectHeading
+          {\textbf{\href{}{Machine Learning Stock Predictor}} $|$ \emph{Python, TensorFlow, Pandas, Flask}}{2021}
+          \resumeItemListStart
+            \resumeItem{Developed ML model to predict stock prices using historical data and technical indicators}
+            \resumeItem{Achieved 85\% accuracy using LSTM neural networks}
+            \resumeItem{Created web interface for users to input stock symbols and view predictions}
+            \resumeItem{Processed and analyzed 5+ years of market data}
+          \resumeItemListEnd
+          
+      \resumeProjectHeading
+          {\textbf{\href{}{Mobile Task Management App}} $|$ \emph{React Native, Firebase, Redux}}{2021}
+          \resumeItemListStart
+            \resumeItem{Built cross-platform mobile app for task management and team collaboration}
+            \resumeItem{Implemented real-time synchronization and push notifications}
+            \resumeItem{Designed intuitive UI/UX resulting in 4.5+ star app store rating}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C/C++, GO, Python} \\
+     \textbf{Frameworks}{: React, Node.js, Express} \\
+     \textbf{Developer Tools}{: Git, Docker, VS Code, Postman, Figma} \\
+     \textbf{Databases}{: PostgreSQL, MongoDB, Redis} \\
+    }}
+ \end{itemize}
+
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements \& Leadership}
+    \resumeSubHeadingListStart
+        \resumeProjectHeading
+            {\textbf{ICPC Participant} $|$ \emph{ACM International Collegiate Programming Contest}}{2022, 2023}
+            \resumeItemListStart
+              \resumeItem{Participated in ICPC Preliminary rounds for two consecutive years}
+            \resumeItemListEnd
+        \resumeProjectHeading
+            {\textbf{Second Runner Up} $|$ \emph{\href{}{Take of Programming Contest}}}{Spring, 2022}
+            \resumeItemListStart
+              \resumeItem{Secured 3rd position in competitive programming contest among 500+ participants}
+            \resumeItemListEnd
+        \resumeProjectHeading
+            {\textbf{ACM Executive} $|$ \emph{Daffodil International University}}{2021-2022}
+            \resumeItemListStart
+              \resumeItem{Assisted faculty and senior members in organizing and managing programming contests and technical events}
+              \resumeItem{Mentored newcomers and junior students in competitive programming and technical skills development}
+              \resumeItem{Actively participated in contests and maintained effective communication channels with faculty members}
+              \resumeItem{Collaborated with academic staff to enhance student engagement in computer science activities}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%-----------CERTIFICATIONS-----------   
+\section{Certifications}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{\href{https://shorturl.at/ZqhyJ}{Version Control - Coursera}}}{2025}
+      \resumeProjectHeading
+          {\textbf{\href{https://www.datacamp.com/completed/statement-of-accomplishment/course/cecd566c17244e4b4944ce4ec42c3a4d38c2d08a}{DataCamp SQL Fundamentals}}}{2024}
+      \resumeProjectHeading
+          {\textbf{\href{https://www.coursera.org/account/accomplishments/verify/600BO9O53MT6}{Front-End Development - Coursera}}}{2024}
+    \resumeSubHeadingListEnd
+
+%-----------PROBLEM SOLVING-----------
+\section{Problem Solving}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Competitive Programming} $|$ \emph{650+ Problems Solved}}{2020-Present}
+          \resumeItemListStart
+            \resumeItem{Solved 650+ problems on Codeforces, LeetCode, HackerRank, CodeChef with focus on algorithms and data structures}
+            \resumeItem{Expertise in sorting, searching, dynamic programming, graph algorithms, and complexity optimization}
+            \resumeItem{Proficient in stack, queue, linked list, heap, binary tree, and advanced data structure implementations}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+\end{document}
