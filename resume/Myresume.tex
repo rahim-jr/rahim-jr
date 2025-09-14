@@ -5,9 +5,10 @@
 \usepackage{titlesec}
 \usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{color}
+\usepackage{xcolor}
 \usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
+\usepackage[colorlinks=false,linkbordercolor=blue,urlbordercolor=blue,citebordercolor=blue]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
@@ -20,11 +21,11 @@
 \renewcommand{\footrulewidth}{0pt}
 
 % Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
 
 \urlstyle{same}
 
@@ -34,8 +35,8 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \vspace{-6pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
@@ -44,7 +45,7 @@
 % Custom commands
 \newcommand{\resumeItem}[1]{
   \item\small{
-    {#1 \vspace{-2pt}}
+    {#1 \vspace{-5pt}}
   }
 }
 
@@ -77,7 +78,7 @@
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-7pt}}
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%
@@ -108,29 +109,48 @@
 \section{Projects}
     \resumeSubHeadingListStart
       \resumeProjectHeading
-          {\textbf{\href{}{E-Commerce Web Application}} $|$ \emph{React, Node.js, MongoDB, Express}}{2022}
+          {\textbf{\href{https://github.com/rahim-jr/react-weather-app}{React Weather Forecast Application}} $|$ \emph{React, JavaScript, CSS, OpenWeatherMap API, Netlify}}{2023}
           \resumeItemListStart
-            \resumeItem{Built a full-stack e-commerce platform with user authentication and payment processing}
-            \resumeItem{Implemented shopping cart functionality and order management system}
-            \resumeItem{Deployed on AWS with CI/CD pipeline using GitHub Actions}
-            \resumeItem{Achieved 99\% uptime and handled 1000+ concurrent users}
+            \resumeItem{Built responsive weather forecasting web application using React with component-based architecture}
+            \resumeItem{Integrated OpenWeatherMap API for real-time weather data and 5-day forecasts}
+            \resumeItem{Implemented dynamic weather icons, temperature conversion, and interactive city search}
+            \resumeItem{Deployed on Netlify with optimized build process and responsive design}
+          \resumeItemListEnd  
+      
+          \resumeProjectHeading
+          {\textbf{\href{https://github.com/rahim-jr/Digit-Recongntion-Kaggle}{Digit Recognition Kaggle Competition}} $|$ \emph{Python, Keras, TensorFlow, Pandas, NumPy, Scikit-learn}}{2025}
+          \resumeItemListStart
+            \resumeItem{Built deep learning model for handwritten digit recognition using MNIST dataset with 42,000 training samples}
+            \resumeItem{Implemented multi-layer neural network with dense layers, dropout regularization, and Adam optimizer}
+            \resumeItem{Achieved high accuracy through data preprocessing, feature engineering, and hyperparameter tuning}
+            \resumeItem{Generated predictions for 28,000 test samples and submitted to Kaggle competition}
           \resumeItemListEnd
           
       \resumeProjectHeading
-          {\textbf{\href{}{Machine Learning Stock Predictor}} $|$ \emph{Python, TensorFlow, Pandas, Flask}}{2021}
+          {\textbf{\href{https://github.com/rahim-jr/Broadcast-Server}{Real-time Broadcast Server}} $|$ \emph{Node.js, Express, WebSocket, JavaScript, HTML/CSS}}{2025}
           \resumeItemListStart
-            \resumeItem{Developed ML model to predict stock prices using historical data and technical indicators}
-            \resumeItem{Achieved 85\% accuracy using LSTM neural networks}
-            \resumeItem{Created web interface for users to input stock symbols and view predictions}
-            \resumeItem{Processed and analyzed 5+ years of market data}
+            \resumeItem{Built real-time chat application with WebSocket-based bidirectional communication and message broadcasting}
+            \resumeItem{Implemented Express HTTP server serving static assets and WebSocket server for live messaging with 100+ unique usernames}
+            \resumeItem{Built client-side message editing with real-time synchronization across all connected clients}
+            \resumeItem{Deployed production-ready application on Render with graceful connection handling and responsive UI}
           \resumeItemListEnd
           
       \resumeProjectHeading
-          {\textbf{\href{}{Mobile Task Management App}} $|$ \emph{React Native, Firebase, Redux}}{2021}
+          {\textbf{\href{https://github.com/rahim-jr/Automated-Job-Scrapper}{Automated Job Scraper Platform}} $|$ \emph{Python, FastAPI, React, Material-UI, BeautifulSoup, SQLAlchemy}}{2025 (Ongoing)}
           \resumeItemListStart
-            \resumeItem{Built cross-platform mobile app for task management and team collaboration}
-            \resumeItem{Implemented real-time synchronization and push notifications}
-            \resumeItem{Designed intuitive UI/UX resulting in 4.5+ star app store rating}
+            \resumeItem{Developing full-stack web scraping platform for Bangladeshi job platforms using FastAPI backend and React frontend}
+            \resumeItem{Implementing asynchronous web scraping with BeautifulSoup and aiohttp for real-time job data extraction}
+            \resumeItem{Building responsive React UI with Material-UI components for job search, filtering, and detailed job information display}
+            \resumeItem{Designing RESTful API with SQLAlchemy ORM, CORS middleware, and automated data processing pipeline}
+          \resumeItemListEnd
+          
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/rahim-jr/Amazon-lite-ecommerce-lite}{Amazon-lite E-commerce API}} $|$ \emph{Node.js, TypeScript, Express, MongoDB, Mongoose, JWT, bcryptjs}}{2025 (Ongoing)}
+          \resumeItemListStart
+            \resumeItem{Developing secure e-commerce API backend using Node.js, TypeScript, and Express with MongoDB integration}
+            \resumeItem{Implementing JWT-based authentication system with access/refresh tokens and bcryptjs password hashing}
+            \resumeItem{Building RESTful endpoints for user registration, login, and protected routes with middleware validation}
+            \resumeItem{Configuring MongoDB connection with Mongoose ODM, cookie parsing, and developing scalable user management system}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
 
@@ -156,30 +176,39 @@
               \resumeItem{Participated in ICPC Preliminary rounds for two consecutive years}
             \resumeItemListEnd
         \resumeProjectHeading
-            {\textbf{Second Runner Up} $|$ \emph{\href{}{Take of Programming Contest}}}{Spring, 2022}
+            {\textbf{Second Runner Up} $|$ \emph{\href{https://toph.co/c/diu-take-off-2022/standings}{DIU Take-off Programming Contest}}}{Spring, 2022}
             \resumeItemListStart
               \resumeItem{Secured 3rd position in competitive programming contest among 500+ participants}
             \resumeItemListEnd
         \resumeProjectHeading
             {\textbf{ACM Executive} $|$ \emph{Daffodil International University}}{2021-2022}
             \resumeItemListStart
-              \resumeItem{Assisted faculty and senior members in organizing and managing programming contests and technical events}
-              \resumeItem{Mentored newcomers and junior students in competitive programming and technical skills development}
-              \resumeItem{Actively participated in contests and maintained effective communication channels with faculty members}
-              \resumeItem{Collaborated with academic staff to enhance student engagement in computer science activities}
+              \resumeItem{Organized programming contests and technical events for university students and computer science community}
+              \resumeItem{Enhanced student engagement through collaborative initiatives with faculty and effective communication}
             \resumeItemListEnd
     \resumeSubHeadingListEnd
-
 
 %-----------CERTIFICATIONS-----------   
 \section{Certifications}
     \resumeSubHeadingListStart
       \resumeProjectHeading
           {\textbf{\href{https://shorturl.at/ZqhyJ}{Version Control - Coursera}}}{2025}
+          \resumeItemListStart
+            \resumeItem{Mastered Git fundamentals including branching, merging, and collaborative workflows}
+            \resumeItem{Implemented version control best practices for team collaboration}
+          \resumeItemListEnd
       \resumeProjectHeading
           {\textbf{\href{https://www.datacamp.com/completed/statement-of-accomplishment/course/cecd566c17244e4b4944ce4ec42c3a4d38c2d08a}{DataCamp SQL Fundamentals}}}{2024}
+          \resumeItemListStart
+            \resumeItem{Developed proficiency in SQL queries, joins, aggregations, and database design}
+            \resumeItem{Applied data manipulation techniques for business intelligence and analytics using PostgreSQL and MySQL}
+          \resumeItemListEnd
       \resumeProjectHeading
           {\textbf{\href{https://www.coursera.org/account/accomplishments/verify/600BO9O53MT6}{Front-End Development - Coursera}}}{2024}
+          \resumeItemListStart
+            \resumeItem{Built responsive web applications using HTML5, CSS3, JavaScript, and modern frameworks}
+            \resumeItem{Implemented UI/UX design principles and cross-browser compatibility}
+          \resumeItemListEnd
     \resumeSubHeadingListEnd
 
 %-----------PROBLEM SOLVING-----------
@@ -188,7 +217,7 @@
       \resumeProjectHeading
           {\textbf{Competitive Programming} $|$ \emph{650+ Problems Solved}}{2020-Present}
           \resumeItemListStart
-            \resumeItem{Solved 650+ problems on Codeforces, LeetCode, HackerRank, CodeChef with focus on algorithms and data structures}
+            \resumeItem{Solved 650+ problems on Codeforces, LeetCode, HackerRank, CodeChef focusing on algorithms and data structures}
             \resumeItem{Expertise in sorting, searching, dynamic programming, graph algorithms, and complexity optimization}
             \resumeItem{Proficient in stack, queue, linked list, heap, binary tree, and advanced data structure implementations}
           \resumeItemListEnd
