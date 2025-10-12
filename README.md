@@ -11,9 +11,9 @@
 
 ---
 
-<div align="center">
+<!-- <div align="center">
   <img src="https://komarev.com/ghpvc/?username=rahim-jr&style=flat-square&color=blue" alt="Profile Views" />
-</div>
+</div> -->
 
 ## 🌐 Connect With Me
 
