@@ -525,7 +525,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: "React Weather App",
             category: "Web Application",
             description: "Real-time weather forecasting with 5-day data and dynamic icons.",
-            image: "", // No image provided, will use fallback
+            image: "./images/weather_app.png", // No image provided, will use fallback
             color: "#3498db", // Blue
             github: "https://github.com/rahim-jr/react-weather-app",
             link: "#" // Live demo placeholder
