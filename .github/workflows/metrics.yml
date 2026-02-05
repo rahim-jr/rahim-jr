@@ -15,9 +15,24 @@ jobs:
       - uses: lowlighter/metrics@v3.34
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-          # Your GitHub username
           user: rahim-jr
-          # Output file
-          filename: metrics.svg
-          # Base metrics
-          base: header, activity, community, repositories, metadata
+          template: classic
+          base: header, activity
+          
+          # Display icons
+          config_display: large
+          config_octicon: yes
+          
+          # Notable contributions
+          plugin_notable: yes
+          plugin_notable_from: organization
+          plugin_notable_types: commit
+          plugin_notable_repositories: yes
+          
+          # Recent activity
+          plugin_activity: yes
+          plugin_activity_limit: 5
+          plugin_activity_days: 14
+          plugin_activity_filter: all
+          plugin_activity_visibility: all
+          plugin_activity_timestamps: yes
