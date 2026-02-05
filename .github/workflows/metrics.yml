@@ -1,0 +1,23 @@
+name: Metrics
+on:
+  # Schedule daily updates
+  schedule: [{cron: "0 0 * * *"}]
+  # Allow manual trigger
+  workflow_dispatch:
+  # Run on push to main
+  push: {branches: ["main", "master"]}
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@v3.34
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          # Your GitHub username
+          user: rahim-jr
+          # Output file
+          filename: metrics.svg
+          # Base metrics
+          base: header, activity, community, repositories, metadata
