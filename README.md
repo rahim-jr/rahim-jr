@@ -94,9 +94,10 @@ I'm a passionate developer focused on building innovative solutions and contribu
 
 ## 🤝 Connect With Me
 
+<!-- Update these links with your actual social media profiles -->
 [![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/rahim-jr)
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rahim-jr)
-[![X (Twitter)](https://img.shields.io/badge/-X-000000?style=flat-square&logo=x&logoColor=white)](https://twitter.com/rahim_jr)
+[![X (Twitter)](https://img.shields.io/badge/-X-000000?style=flat-square&logo=x&logoColor=white)](https://x.com/rahim_jr)
 
 ---
 
