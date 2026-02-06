@@ -36,7 +36,11 @@ I work with modern technologies and enjoy solving complex problems through clean
 
 ### Activity
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=rahim-jr&show_icons=true&theme=default&count_private=true&hide_border=true&hide_title=true)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=rahim-jr&show_icons=true&theme=radical&count_private=true&hide_border=false&include_all_commits=true)
+
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=rahim-jr&theme=radical&hide_border=false)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=rahim-jr&layout=compact&theme=radical&hide_border=false)
 
 ### Contributions
 
