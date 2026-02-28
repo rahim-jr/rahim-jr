@@ -17,7 +17,7 @@ Skills & Tools
 
 » Backend:      Node.js, Express.js, Golang
 » Frontend:     Next.js, React, JavaScript, TypeScript
-» Databases:    MySQL or PostgreSQL, MongoDB
+» Databases:    MySQL, PostgreSQL, MongoDB
 » DevOps:       Docker, Git, Linux, Postman
 
 -----------------
@@ -25,16 +25,16 @@ Featured Projects
 
 ● NesoHQ Issue Tracker
     ✦ A community-driven issue tracker built for open source projects with seamless
-        GitHub API integration for managing issues directly from the board.
-    ✦ Tracking issues in real time with a fully manageable project board experience.
+      GitHub API integration for managing issues directly from the board.
+    ✦ Track issues in real time with a fully manageable project board experience.
     ✦ Link: https://github.com/NesoHQ/nesohq-issue-tracker
 
 ● Open Source Job Board
-    ✦ An interactive job board designed for open source communities where companies and
-        teams can post job openings and individuals can apply easily.
-    ✦ Built with TypeScript to provide a modern, responsive, and user-friendly experience.
+    ✦ An interactive job board designed for open source communities where companies
+      and teams can post job openings and individuals can apply easily.
+    ✦ Built with TypeScript to provide a modern, responsive, and user-friendly
+      experience.
     ✦ Link: https://github.com/rahim-jr/job-board-ts
-
 
 --------------------------
 Thanks for stopping by! :)
